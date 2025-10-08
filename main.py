@@ -17,13 +17,13 @@ st.sidebar.text("""USE :
     3.Populate contact fields (phone, email) in a helpdesk ticket from voicemail.
     4.Bulk-processing conference business cards or meeting recordings.""")
 
-st.sidebar.image(r"C:\Users\sumit\Desktop\AUG 25\Helpie\input image\logo_2.png",width=50)
+st.sidebar.image(r"logo_2.png",width=50)
 
 if GOOGLE_API_KEY:
     client = genai.Client(api_key=GOOGLE_API_KEY)
     MODEL_ID = "gemini-2.5-pro"
 
-st.image(r"C:\Users\sumit\Desktop\AUG 25\Helpie\input image\logo_1.png")
+st.image(r"logo_1.png")
 st.title("📋 HELPIE ENTITY EXTRACTOR")
 options = ["","Card","Audio"]
 selected = st.selectbox("Select between Card & Audio:", options)
@@ -152,3 +152,4 @@ elif selected=="Audio":
                 # Display as readable key-value pairs
                 for key, value in response_for_data_output_json.items():
                     st.markdown(f"**{key.title()}**: {value}")
+
